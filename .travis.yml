@@ -1,0 +1,10 @@
+language: node_js
+node_js: "node"
+services:
+  - mongodb
+  deploy:
+    provide:heroku
+    app:
+      master:haypoll
+env:
+  - MONGODB_URI=mongodb://localhost:27017/haypoll AUTH_SECRET=MONKEYBANANASPLITS
