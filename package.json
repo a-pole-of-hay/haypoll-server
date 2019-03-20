@@ -4,9 +4,9 @@
   "description": "server side back end land for haypoll",
   "main": "index.js",
   "scripts": {
+    "test": "jest --verbose",
     "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "jest --verbose"
+    "pretest": "npm run lint"
   },
   "repository": {
     "type": "git",

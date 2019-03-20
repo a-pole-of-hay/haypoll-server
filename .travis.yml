@@ -1,10 +1,10 @@
 language: node_js
-node_js: "node"
-services:
-  - mongodb
-  deploy:
-    provide:heroku
-    app:
-      master:haypoll
-env:
-  - MONGODB_URI=mongodb://localhost:27017/haypoll AUTH_SECRET=MONKEYBANANASPLITS
+node_js: node
+services: mongodb
+env: MONGODB_URI=mongodb://localhost:27017/haypoll
+deploy:
+  provider: heroku
+  app:
+    master: haypoll-server
+  api_key:
+    secure: WxGqffVvkw5ObU90zXXUAKQAkh4AVJgac3RI0r90sltSnmPB8uXuR9h1TOyg1HlIk5QhK2lOX5zWimvksR88TbnIAqTV7m8DS9slKKEICrhVvoB80jqZlDbxob/e8qwHpSZSIcFbMjLT7Co9cNKTMgxQGGSi/MF4xtG4XwLJkmxjCUk82zSVxRp3ioQSL+eUHjDaUt+DqMUDkqbf71QneR1Lyl/HnfnlrDJ/GlMDGBGtWhLHgNWII5KQV+CxpAHlmFq4PNSW/Uue9uB86gpRYimlUijcVOvFSbRQmAzz93pD+4aJIvQaSLKmVM1bbunVwGiyR5tJSq5SqBzycJCAyBSpn0gqPucL3dSOdiWAhEDZJ4D9zcVdIVP7IDwPFvCCq4CkBvBaHX/CCyTGL07bQDdNYPHfvVr7GGDYhxGsE/81soJ3rBye5bbqgvyMq9vbaH+p69UEgsnotwfkox5IpTiuks8SwFom7UzVbCTMD4d+R06KfGWZmQh9e5UM9jVtBHKy2ciHnqN/rJlNlomEGXOUgDFKFID3MJAJ/f3Q1IpGrtxnQfBobqHXbV4/NPG6VPffujWwFN0bkmtMsDH2MZz6SCKjXheJnxxKbY7edmT1dzr+np4/7EgDrCAADlSVtMRqrZwMms/KTLifcie/rAQKWo8tx+dtl4z0qQ+T7PM=
