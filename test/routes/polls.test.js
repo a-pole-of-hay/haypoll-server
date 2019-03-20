@@ -22,24 +22,26 @@ describe('polls routes', () => {
     return request(app)
       .get('/polls')
       .then(res => {
-        expect(res.body).toHaveLength(5);
+        expect(res.body).toHaveLength(6);
       });
   });
 
   it('gets a poll by id', () => {
-    return getPoll().then(poll => {
-      console.log('!!!', poll);
-      return request(app)
-        .get(`/polls/${poll._id}`)
-        .then(res => {
-          expect(res.body).toEqual({
-            question: 'do you like polls?',
-            options:['yes', 'no'],
-            creator: '1234',
-            __v: 0,
-            _id: expect.any(String)
-          });
-        }); 
-    });
+    return getPoll()
+      .then(poll => {
+        console.log('!!!', poll);
+        return request(app)
+          .get(`/polls/${poll._id}`)
+          .then(res => {
+            console.log(typeof res.body._id);
+            expect(res.body).toEqual({
+              question: 'How is life?',
+              options:['yes', 'no'],
+              creator: 'email@email.com',
+              __v: 0,
+              _id: expect.any(String)
+            });
+          }); 
+      });
   });
 });

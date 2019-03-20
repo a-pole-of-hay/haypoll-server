@@ -7,7 +7,8 @@ const questions = [
   'was today fun?', 
   'is the sky blue?', 
   'is banana bread awesome?',
-  'does this work?'
+  'does this work?',
+  'How is life?'
 ];
 const options = ['yes', 'no'];
 
