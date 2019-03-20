@@ -19,11 +19,13 @@ afterAll(() => {
 
 const getPoll = () => {
   return Poll
-    .findOne({ question: 'Do you like apples?' })
+    .findOne({ question: 'How is life?' })
     .then(poll => {
+      console.log('******', poll);
       return JSON.parse(JSON.stringify(poll));
     });
 };
+
 module.exports = {
   getPoll
 };
