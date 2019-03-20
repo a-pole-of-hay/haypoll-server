@@ -26,7 +26,7 @@ const seedData = () => {
           return Promise.all([...Array(5)].map(() => {
             return Vote.create({
               username: chance.pickone(options),
-              result: 'email@email.com',
+              result: 2,
               pollId: poll._id
             });
           })
