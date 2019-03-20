@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const connect = require('../utils/connect');
-const Poll = require('../lib/models/polls/Poll');
-const Vote = require('../lib/models/votes/Vote');
+const connect = require('../../utils/connect');
+const Poll = require('../../lib/models/polls/Poll');
+const Vote = require('../../lib/models/votes/Vote');
 
 describe('Vote model', () => {
   beforeEach(() => connect());
@@ -14,7 +14,8 @@ describe('Vote model', () => {
     return Poll
       .create({
         question: 'How is life?',
-        options: ['good', 'bad', 'ugly']
+        options: ['good', 'bad', 'ugly'],
+        creator: '1234'
       })
       .then(poll => Vote.create({
         username: 'shabster',

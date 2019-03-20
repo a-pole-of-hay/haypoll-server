@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const connect = require('../utils/connect');
-const Poll = require('../lib/models/polls/Poll');
+const connect = require('../../utils/connect');
+const Poll = require('../../lib/models/polls/Poll');
 
 describe('Poll model', () => {
   beforeEach(() => connect());
@@ -13,12 +13,14 @@ describe('Poll model', () => {
     return Poll
       .create({
         question: 'How is life?',
-        options: ['good', 'bad', 'ugly']
+        options: ['good', 'bad', 'ugly'],
+        creator: '1234'
       })
       .then(poll => {
         expect(poll.toJSON()).toEqual({
           question: 'How is life?',
           options: ['good', 'bad', 'ugly'],
+          creator: '1234',
           _id: poll._id,
           __v: 0
         });
